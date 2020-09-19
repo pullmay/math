@@ -1,9 +1,15 @@
-\documentclass[a4j,uplatex]{jsarticle}
+\documentclass[dvipdfmx,uplatex]{jsarticle}
 
 \usepackage{color,amsmath,amssymb,enumerate,graphicx}
 \usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
 \usepackage{mysty}
 \usepackage{mythmj}
+\usepackage{tcolorbox}
+
+% \tcbuselibrary{skins}%shadow
+\tcbuselibrary{raster,skins}
+\newtcolorbox{defbox}{enhanced, colback=white, colframe=black, sharp corners, boxrule=.75pt, drop shadow=black!30!white}
+\newtcolorbox{theorembox}{enhanced, colback=white, colframe=black, boxrule=.75pt, arc=2mm, drop shadow=black!30!white}
 
 \begin{document}
 
@@ -15,22 +21,28 @@
 \section{概要}
 これは \LaTeX が Visual Studio Code でビルドできるかどうかのテスト文章です．
 
-\section{箇条書き}
-\begin{itemize}
-    \item 珈琲
-    \item 田舎
-    \item 蕎麦
-\end{itemize}
-
 \section{数式}
-\begin{align}
-    \sin(\alpha \pm \beta) &= \sin \alpha \cos \beta \pm \cos \alpha \sin \beta \\
-    \cos(\alpha \pm \beta) &= \cos \alpha \cos \beta \mp \sin \alpha \sin \beta \\
-    \tan(\alpha \pm \beta) &= \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}
-\end{align}
+% \begin{align}
+%     \sin(\alpha \pm \beta) &= \sin \alpha \cos \beta \pm \cos \alpha \sin \beta \\
+%     \cos(\alpha \pm \beta) &= \cos \alpha \cos \beta \mp \sin \alpha \sin \beta \\
+%     \tan(\alpha \pm \beta) &= \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}
+% \end{align}
+%
+\begin{defbox}
+    \begin{definition}
+      hoge
+    \end{definition}
+\end{defbox}
 
-\begin{theorem}
-    ほげ。
-\end{theorem}
+\begin{proof}
+    prooooof.  
+\end{proof}
+%
+\vspace{\baselineskip}
+\begin{theorembox}
+    \begin{theorem}
+      hoge
+    \end{theorem}
+\end{theorembox}
 
 \end{document}
