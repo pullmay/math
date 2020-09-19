@@ -1,0 +1,1211 @@
+\usepackage{amssymb}
+\setlength{\arraycolsep}{0.2em}
+\newenvironment{xarray}{\setlength{\arraycolsep}{0.5em}\begin{array}}{\end{array}}
+
+\if0
+\makeatletter
+\renewcommand{\theequation}{%
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+\fi
+
+% --- new command --- %
+
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\black}{\color{black}}
+\newcommand{\white}{\color{white}}
+\newcommand{\yellow}{\color{yellow}}
+\newcommand{\magenta}{\color{magenta}}
+\newcommand{\green}{\color{green}}
+
+\newcommand{\rref}[1]{{\rm\ref{#1}}}
+\newcommand{\kref}{\eqref}
+\newcommand{\lw}[1]{\smash{\lower2.0ex\hbox{#1}}}
+
+\newcommand{\footnoteasta}[1]{%
+\def\thefootnote{$*$\arabic{footnote}}%
+\footnote{#1}%
+\def\thefootnote{\arabic{footnote}}}
+
+\newcommand{\ftasta}[1]{%
+\def\thefootnote{$*$\arabic{footnote}}%
+\footnote{#1}%
+\def\thefootnote{\arabic{footnote}}}
+
+% --- Kakko --- %
+
+\newcommand{\kl}{\left(}
+\newcommand{\kr}{\right)}
+\newcommand{\kkl}{\left\{}
+\newcommand{\kkr}{\right\}}
+\newcommand{\kkkl}{\left[}
+\newcommand{\kkkr}{\right]}
+\newcommand{\vvl}{\left\|}
+\newcommand{\vvr}{\right\|}
+\newcommand{\vl}{\left|}
+\newcommand{\vr}{\right|}
+\newcommand{\ppl}{\left.}
+\newcommand{\ppr}{\right.}
+
+
+% --- Shortening --- %
+
+\newcommand{\andd}{\mbox{\rm and}}
+\newcommand{\subto}{\mbox{\rm subject to}}
+\newcommand{\suchthat}{\mbox{\rm such that}}
+\newcommand{\st}{\mbox{\rm s.t.}}
+\newcommand{\ts}{\textstyle}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\etal}{et.\:al.\ }
+
+% --- long Arrow --- %
+
+\newcommand{\slarrow}{\leftarrow}
+\newcommand{\srarrow}{\rightarrow}
+\newcommand{\slrarrow}{\leftrightarrow}
+\newcommand{\Slarrow}{\Leftarrow}
+\newcommand{\Srarrow}{\Rightarrow}
+\newcommand{\Slrarrow}{\Leftrightarrow}
+
+\newcommand{\llarrow}{\longleftarrow}
+\newcommand{\lrarrow}{\longrightarrow}
+\newcommand{\llrarrow}{\longleftrightarrow}
+\newcommand{\Llarrow}{\Longleftarrow}
+\newcommand{\Lrarrow}{\Longrightarrow}
+\newcommand{\Llrarrow}{\Longleftrightarrow}
+
+\newcommand{\too}{$\ \longrightarrow\ $}
+
+
+
+% --- mathrm operators --- %
+
+\makeatletter
+% nolimits
+\def\sgn{\mathop{\operator@font sgn}\nolimits}
+\def\sign{\mathop{\operator@font sign}\nolimits}
+\def\bd{\mathop{\operator@font bd}\nolimits}
+\def\cl{\mathop{\operator@font cl}\nolimits}
+\def\co{\mathop{\operator@font co}\nolimits}
+\def\cone{\mathop{\operator@font cone}\nolimits}
+\def\conv{\mathop{\operator@font conv}\nolimits}
+\def\diag{\mathop{\operator@font diag}\nolimits}
+\def\Diag{\mathop{\operator@font Diag}\nolimits}
+\def\dist{\mathop{\operator@font dist}\nolimits}
+\def\epi{\mathop{\operator@font epi}\nolimits}
+\def\graph{\mathop{\operator@font graph}\nolimits}
+\def\Graph{\mathop{\operator@font Graph}\nolimits}
+\def\image{\mathop{\operator@font im}\nolimits}
+\def\Image{\mathop{\operator@font Im}\nolimits}
+\def\inter{\mathop{\operator@font int}\nolimits}
+\def\ker{\mathop{\operator@font ker}\nolimits}
+\def\Ker{\mathop{\operator@font Ker}\nolimits}
+\def\Proj{\mathop{\operator@font Proj}\nolimits}
+\def\rank{\mathop{\operator@font rank}\nolimits}
+\def\supp{\mathop{\operator@font supp}\nolimits}
+\def\tr{\mathop{\operator@font tr}\nolimits}
+\def\Tr{\mathop{\operator@font Tr}\nolimits}
+\def\trace{\mathop{\operator@font trace}\nolimits}
+\def\Trace{\mathop{\operator@font Trace}\nolimits}
+% limits
+\def\find{\mathop{\operator@font find}\limits}
+\def\Find{\mathop{\operator@font Find}\limits}
+\def\mini{\mathop{\operator@font minimize}\limits}
+\def\maxi{\mathop{\operator@font maximize}\limits}
+\def\Mini{\mathop{\operator@font Minimize}\limits}
+\def\Maxi{\mathop{\operator@font Maximize}\limits}
+\def\Min{\mathop{\operator@font Min}\limits}
+\def\Max{\mathop{\operator@font Max}\limits}
+\def\argmin{\mathop{\operator@font argmin}\limits}
+\def\argmax{\mathop{\operator@font argmax}\limits}
+\def\Argmin{\mathop{\operator@font Argmin}\limits}
+\def\Argmax{\mathop{\operator@font Argmax}\limits}
+\makeatother
+
+
+%%% LP, SOCP, etc %%%
+
+\newcommand{\LP}{\mbox{\rm LP}}
+\newcommand{\QP}{\mbox{\rm QP}}
+\newcommand{\NLP}{\mbox{\rm NLP}}
+\newcommand{\VIP}{\mbox{\rm VIP}}
+\newcommand{\SOCP}{\mbox{\rm SOCP}}
+\newcommand{\LSOCP}{\mbox{\rm LSOCP}}
+\newcommand{\CSOCP}{\mbox{\rm CSOCP}}
+\newcommand{\DCSOCP}{\mbox{\rm DCSOCP}}
+\newcommand{\SDP}{\mbox{\rm SDP}}
+\newcommand{\SIP}{\mbox{\rm SIP}}
+\newcommand{\CSSIP}{\mbox{\rm CSSIP}}
+\newcommand{\LCP}{\mbox{\rm LCP}}
+\newcommand{\NCP}{\mbox{\rm NCP}}
+\newcommand{\SOCCP}{\mbox{\rm SOCCP}}
+\newcommand{\SDCP}{\mbox{\rm SDCP}}
+
+
+
+% --- Set of reals, vectors, matrices, etc. --- %
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rl}{\mathbb{R}^l}
+\newcommand{\Rel}{\mathbb{R}^\ell}
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Rm}{\mathbb{R}^m}
+\newcommand{\Rll}{\mathbb{R}^{\ell\times\ell}}
+\newcommand{\Rnn}{\mathbb{R}^{n\times n}}
+\newcommand{\Rmm}{\mathbb{R}^{m\times m}}
+\newcommand{\Rln}{\mathbb{R}^{\ell\times n}}
+\newcommand{\Rnm}{\mathbb{R}^{n\times m}}
+\newcommand{\Rml}{\mathbb{R}^{m\times\ell}}
+\newcommand{\Rnl}{\mathbb{R}^{n\times\ell}}
+\newcommand{\Rmn}{\mathbb{R}^{m\times n}}
+\newcommand{\Rlm}{\mathbb{R}^{\ell\times m}}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Zl}{\mathbb{Z}^\ell}
+\newcommand{\Zn}{\mathbb{Z}^n}
+\newcommand{\Zm}{\mathbb{Z}^m}
+\newcommand{\Zll}{\mathbb{Z}^{\ell\times\ell}}
+\newcommand{\Znn}{\mathbb{Z}^{n\times n}}
+\newcommand{\Zmm}{\mathbb{Z}^{m\times m}}
+\newcommand{\Zln}{\mathbb{Z}^{\ell\times n}}
+\newcommand{\Znm}{\mathbb{Z}^{n\times m}}
+\newcommand{\Zml}{\mathbb{Z}^{m\times\ell}}
+\newcommand{\Znl}{\mathbb{Z}^{n\times\ell}}
+\newcommand{\Zmn}{\mathbb{Z}^{m\times n}}
+\newcommand{\Zlm}{\mathbb{Z}^{\ell\times m}}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Cl}{\mathbb{C}^\ell}
+\newcommand{\Cn}{\mathbb{C}^n}
+\newcommand{\Cm}{\mathbb{C}^m}
+\newcommand{\Cll}{\mathbb{C}^{\ell\times\ell}}
+\newcommand{\Cnn}{\mathbb{C}^{n\times n}}
+\newcommand{\Cmm}{\mathbb{C}^{m\times m}}
+\newcommand{\Cln}{\mathbb{C}^{\ell\times n}}
+\newcommand{\Cnm}{\mathbb{C}^{n\times m}}
+\newcommand{\Cml}{\mathbb{C}^{m\times\ell}}
+\newcommand{\Cnl}{\mathbb{C}^{n\times\ell}}
+\newcommand{\Cmn}{\mathbb{C}^{m\times n}}
+\newcommand{\Clm}{\mathbb{C}^{\ell\times m}}
+
+\renewcommand{\S}{\mathcal{S}}
+\newcommand{\Sl}{\mathcal{S}^\ell}
+\newcommand{\Sn}{\mathcal{S}^n}
+\newcommand{\Sm}{\mathcal{S}^m}
+\newcommand{\Sll}{\mathcal{S}^{\ell\times\ell}}
+\newcommand{\Snn}{\mathcal{S}^{n\times n}}
+\newcommand{\Smm}{\mathcal{S}^{m\times m}}
+\newcommand{\Sln}{\mathcal{S}^{\ell\times n}}
+\newcommand{\Snm}{\mathcal{S}^{n\times m}}
+\newcommand{\Sml}{\mathcal{S}^{m\times\ell}}
+\newcommand{\Snl}{\mathcal{S}^{n\times\ell}}
+\newcommand{\Smn}{\mathcal{S}^{m\times n}}
+\newcommand{\Slm}{\mathcal{S}^{\ell\times m}}
+
+\newcommand{\kel}{\kkk^\ell}
+\newcommand{\kkk}{{\cal K}}
+\newcommand{\kn}{{\cal K}^n}
+\newcommand{\K}{{\cal K}}
+
+% --- Mathematic Operators --- %
+
+\newcommand{\nabw}{\nabla_{\!w}}
+\newcommand{\nabx}{\nabla_{\!x}}
+\newcommand{\naby}{\nabla_{\!y}}
+\newcommand{\nabz}{\nabla_{\!z}}
+
+\newcommand{\limk}{\lim_{k\to\infty}}
+\newcommand{\limkk}{\lim_{k\to\infty,k\in K}}
+
+
+% --- Special constants --- %
+
+\newcommand{\veczero}{\mbox{\boldmath$0$}}
+\newcommand{\vecone}{\mbox{\boldmath$1$}}
+
+
+% --- etc --- %
+
+% --- Exchange method --- %
+
+\newcommand{\tnew}{t_{\mbox{\rm\scriptsize new}}}
+\newcommand{\tin}{t_{{\rm in}}}
+\newcommand{\tout}{t_{{\rm out}}}
+\newcommand{\snew}{s_{\mbox{\rm\scriptsize new}}}
+\newcommand{\smax}{s_{\mbox{\rm\scriptsize max}}}
+\newcommand{\snewbar}{\overline s_{\mbox{\rm\scriptsize new}}}
+\newcommand{\smaxbar}{\overline s_{\mbox{\rm\scriptsize max}}}
+
+\newcommand{\vcp}{V_{\mbox{\rm\tiny\hspace*{-0.05em}C\hspace*{-0.07em}P}}\hspace*{-0.07em}}
+
+
+\newcommand{\mk}{{m_k}}
+
+
+
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+% -----------------------------------------------------------------------%
+
+
+
+% ---------- Alphabets and Greek Letters ---------- %
+
+% --- Cal ALPHABETS --- %
+
+\newcommand{\cA}{{\cal A}}
+\newcommand{\cB}{{\cal B}}
+\newcommand{\cC}{{\cal C}}
+\newcommand{\cD}{{\cal G}}
+\newcommand{\cE}{{\cal E}}
+\newcommand{\cF}{{\cal F}}
+\newcommand{\cG}{{\cal G}}
+\newcommand{\cH}{{\cal H}}
+\newcommand{\cI}{{\cal I}}
+\newcommand{\cJ}{{\cal J}}
+\newcommand{\cK}{{\cal K}}
+\newcommand{\cL}{{\cal L}}
+\newcommand{\cM}{{\cal M}}
+\newcommand{\cN}{{\cal N}}
+\newcommand{\cO}{{\cal O}}
+\newcommand{\cP}{{\cal P}}
+\newcommand{\cQ}{{\cal Q}}
+\newcommand{\cR}{{\cal R}}
+\newcommand{\cS}{{\cal S}}
+\newcommand{\cT}{{\cal T}}
+\newcommand{\cU}{{\cal U}}
+\newcommand{\cV}{{\cal V}}
+\newcommand{\cW}{{\cal W}}
+\newcommand{\cX}{{\cal X}}
+\newcommand{\cY}{{\cal Y}}
+\newcommand{\cZ}{{\cal Z}}
+
+%%% bar (scalar) %%%
+
+\newcommand{\abar}{\overline a}
+\newcommand{\bbar}{\overline b}
+\newcommand{\cbar}{\overline c}
+\newcommand{\dbar}{\overline g}
+\newcommand{\ebar}{\overline e}
+\newcommand{\fbar}{\overline f}
+\newcommand{\gbar}{\overline g}
+\renewcommand{\hbar}{\overline h}
+\newcommand{\ibar}{\overline i}
+\newcommand{\jbar}{\overline j}
+\newcommand{\kbar}{\overline k}
+\newcommand{\lbar}{\overline l}
+\newcommand{\mbar}{\overline m}
+\newcommand{\nbar}{\overline n}
+\newcommand{\obar}{\overline o}
+\newcommand{\pbar}{\overline p}
+\newcommand{\qbar}{\overline q}
+\newcommand{\rbar}{\overline r}
+\newcommand{\sbar}{\overline s}
+\newcommand{\tbar}{\overline t}
+\newcommand{\ubar}{\overline u}
+\newcommand{\vbar}{\overline v}
+\newcommand{\wbar}{\overline w}
+\newcommand{\xbar}{\overline x}
+\newcommand{\ybar}{\overline y}
+\newcommand{\zbar}{\overline z}
+
+\newcommand{\Abar}{\overline A}
+\newcommand{\Bbar}{\overline B}
+\newcommand{\Cbar}{\overline C}
+\newcommand{\Dbar}{\overline G}
+\newcommand{\Ebar}{\overline E}
+\newcommand{\Fbar}{\overline F}
+\newcommand{\Gbar}{\overline G}
+\newcommand{\Hbar}{\overline H}
+\newcommand{\Ibar}{\overline I}
+\newcommand{\Jbar}{\overline J}
+\newcommand{\Kbar}{\overline K}
+\newcommand{\Lbar}{\overline L}
+\newcommand{\Mbar}{\overline M}
+\newcommand{\Nbar}{\overline N}
+\newcommand{\Obar}{\overline O}
+\newcommand{\Pbar}{\overline P}
+\newcommand{\Qbar}{\overline Q}
+\newcommand{\Rbar}{\overline R}
+\newcommand{\Sbar}{\overline S}
+\newcommand{\Tbar}{\overline T}
+\newcommand{\Ubar}{\overline U}
+\newcommand{\Vbar}{\overline V}
+\newcommand{\Wbar}{\overline W}
+\newcommand{\Xbar}{\overline X}
+\newcommand{\Ybar}{\overline Y}
+\newcommand{\Zbar}{\overline Z}
+
+\newcommand{\cAbar}{\overline{\cal A}}
+\newcommand{\cBbar}{\overline{\cal B}}
+\newcommand{\cCbar}{\overline{\cal C}}
+\newcommand{\cDbar}{\overline{\cal G}}
+\newcommand{\cEbar}{\overline{\cal E}}
+\newcommand{\cFbar}{\overline{\cal F}}
+\newcommand{\cGbar}{\overline{\cal G}}
+\newcommand{\cHbar}{\overline{\cal H}}
+\newcommand{\cIbar}{\overline{\cal I}}
+\newcommand{\cJbar}{\overline{\cal J}}
+\newcommand{\cKbar}{\overline{\cal K}}
+\newcommand{\cLbar}{\overline{\cal L}}
+\newcommand{\cMbar}{\overline{\cal M}}
+\newcommand{\cNbar}{\overline{\cal N}}
+\newcommand{\cObar}{\overline{\cal O}}
+\newcommand{\cPbar}{\overline{\cal P}}
+\newcommand{\cQbar}{\overline{\cal Q}}
+\newcommand{\cRbar}{\overline{\cal R}}
+\newcommand{\cSbar}{\overline{\cal S}}
+\newcommand{\cTbar}{\overline{\cal T}}
+\newcommand{\cUbar}{\overline{\cal U}}
+\newcommand{\cVbar}{\overline{\cal V}}
+\newcommand{\cWbar}{\overline{\cal W}}
+\newcommand{\cXbar}{\overline{\cal X}}
+\newcommand{\cYbar}{\overline{\cal Y}}
+\newcommand{\cZbar}{\overline{\cal Z}}
+
+% --- hat (scalar) --- %
+
+\newcommand{\ahat}{\hat a}
+\newcommand{\bhat}{\hat b}
+\newcommand{\chat}{\hat c}
+\newcommand{\dhat}{\hat g}
+\newcommand{\ehat}{\hat e}
+\newcommand{\fhat}{\hat f}
+\newcommand{\ghat}{\hat g}
+\newcommand{\hhat}{\hat h}
+\newcommand{\ihat}{\hat i}
+\newcommand{\jhat}{\hat j}
+\newcommand{\khat}{\hat k}
+\newcommand{\lhat}{\hat l}
+\newcommand{\mhat}{\hat m}
+\newcommand{\nhat}{\hat n}
+\newcommand{\ohat}{\hat o}
+\newcommand{\phat}{\hat p}
+\newcommand{\qhat}{\hat q}
+\newcommand{\rhat}{\hat r}
+\newcommand{\shat}{\hat s}
+\newcommand{\that}{\hat t}
+\newcommand{\uhat}{\hat u}
+\newcommand{\vhat}{\hat v}
+\newcommand{\what}{\hat w}
+\newcommand{\xhat}{\hat x}
+\newcommand{\yhat}{\hat y}
+\newcommand{\zhat}{\hat z}
+
+\newcommand{\Ahat}{\hat A}
+\newcommand{\Bhat}{\hat B}
+\newcommand{\Chat}{\hat C}
+\newcommand{\Dhat}{\hat G}
+\newcommand{\Ehat}{\hat E}
+\newcommand{\Fhat}{\hat F}
+\newcommand{\Ghat}{\hat G}
+\newcommand{\Hhat}{\hat H}
+\newcommand{\Ihat}{\hat I}
+\newcommand{\Jhat}{\hat J}
+\newcommand{\Khat}{\hat K}
+\newcommand{\Lhat}{\hat L}
+\newcommand{\Mhat}{\hat M}
+\newcommand{\Nhat}{\hat N}
+\newcommand{\Ohat}{\hat O}
+\newcommand{\Phat}{\hat P}
+\newcommand{\Qhat}{\hat Q}
+\newcommand{\Rhat}{\hat R}
+\newcommand{\Shat}{\hat S}
+\newcommand{\That}{\hat T}
+\newcommand{\Uhat}{\hat U}
+\newcommand{\Vhat}{\hat V}
+\newcommand{\What}{\hat W}
+\newcommand{\Xhat}{\hat X}
+\newcommand{\Yhat}{\hat Y}
+\newcommand{\Zhat}{\hat Z}
+
+\newcommand{\cAhat}{\hat{\cal A}}
+\newcommand{\cBhat}{\hat{\cal B}}
+\newcommand{\cChat}{\hat{\cal C}}
+\newcommand{\cDhat}{\hat{\cal G}}
+\newcommand{\cEhat}{\hat{\cal E}}
+\newcommand{\cFhat}{\hat{\cal F}}
+\newcommand{\cGhat}{\hat{\cal G}}
+\newcommand{\cHhat}{\hat{\cal H}}
+\newcommand{\cIhat}{\hat{\cal I}}
+\newcommand{\cJhat}{\hat{\cal J}}
+\newcommand{\cKhat}{\hat{\cal K}}
+\newcommand{\cLhat}{\hat{\cal L}}
+\newcommand{\cMhat}{\hat{\cal M}}
+\newcommand{\cNhat}{\hat{\cal N}}
+\newcommand{\cOhat}{\hat{\cal O}}
+\newcommand{\cPhat}{\hat{\cal P}}
+\newcommand{\cQhat}{\hat{\cal Q}}
+\newcommand{\cRhat}{\hat{\cal R}}
+\newcommand{\cShat}{\hat{\cal S}}
+\newcommand{\cThat}{\hat{\cal T}}
+\newcommand{\cUhat}{\hat{\cal U}}
+\newcommand{\cVhat}{\hat{\cal V}}
+\newcommand{\cWhat}{\hat{\cal W}}
+\newcommand{\cXhat}{\hat{\cal X}}
+\newcommand{\cYhat}{\hat{\cal Y}}
+\newcommand{\cZhat}{\hat{\cal Z}}
+
+% --- tilde (scalar) --- %
+
+\newcommand{\atil}{\tilde a}
+\newcommand{\btil}{\tilde b}
+\newcommand{\ctil}{\tilde c}
+\newcommand{\dtil}{\tilde g}
+\newcommand{\etil}{\tilde e}
+\newcommand{\ftil}{\tilde f}
+\newcommand{\gtil}{\tilde g}
+\newcommand{\htil}{\tilde h}
+\newcommand{\itil}{\tilde i}
+\newcommand{\jtil}{\tilde j}
+\newcommand{\ktil}{\tilde k}
+\newcommand{\ltil}{\tilde l}
+\newcommand{\mtil}{\tilde m}
+\newcommand{\ntil}{\tilde n}
+\newcommand{\otil}{\tilde o}
+\newcommand{\ptil}{\tilde p}
+\newcommand{\qtil}{\tilde q}
+\newcommand{\rtil}{\tilde r}
+\newcommand{\stil}{\tilde s}
+\newcommand{\ttil}{\tilde t}
+\newcommand{\util}{\tilde u}
+\newcommand{\vtil}{\tilde v}
+\newcommand{\wtil}{\tilde w}
+\newcommand{\xtil}{\tilde x}
+\newcommand{\ytil}{\tilde y}
+\newcommand{\ztil}{\tilde z}
+
+\newcommand{\Atil}{\tilde A}
+\newcommand{\Btil}{\tilde B}
+\newcommand{\Ctil}{\tilde C}
+\newcommand{\Dtil}{\tilde G}
+\newcommand{\Etil}{\tilde E}
+\newcommand{\Ftil}{\tilde F}
+\newcommand{\Gtil}{\tilde G}
+\newcommand{\Htil}{\tilde H}
+\newcommand{\Itil}{\tilde I}
+\newcommand{\Jtil}{\tilde J}
+\newcommand{\Ktil}{\tilde K}
+\newcommand{\Ltil}{\tilde L}
+\newcommand{\Mtil}{\tilde M}
+\newcommand{\Ntil}{\tilde N}
+\newcommand{\Otil}{\tilde O}
+\newcommand{\Ptil}{\tilde P}
+\newcommand{\Qtil}{\tilde Q}
+\newcommand{\Rtil}{\tilde R}
+\newcommand{\Stil}{\tilde S}
+\newcommand{\Ttil}{\tilde T}
+\newcommand{\Util}{\tilde U}
+\newcommand{\Vtil}{\tilde V}
+\newcommand{\Wtil}{\tilde W}
+\newcommand{\Xtil}{\tilde X}
+\newcommand{\Ytil}{\tilde Y}
+\newcommand{\Ztil}{\tilde Z}
+
+\newcommand{\cAtil}{\hat{\tilde A}}
+\newcommand{\cBtil}{\hat{\tilde B}}
+\newcommand{\cCtil}{\hat{\tilde C}}
+\newcommand{\cDtil}{\hat{\tilde G}}
+\newcommand{\cEtil}{\hat{\tilde E}}
+\newcommand{\cFtil}{\hat{\tilde F}}
+\newcommand{\cGtil}{\hat{\tilde G}}
+\newcommand{\cHtil}{\hat{\tilde H}}
+\newcommand{\cItil}{\hat{\tilde I}}
+\newcommand{\cJtil}{\hat{\tilde J}}
+\newcommand{\cKtil}{\hat{\tilde K}}
+\newcommand{\cLtil}{\hat{\tilde L}}
+\newcommand{\cMtil}{\hat{\tilde M}}
+\newcommand{\cNtil}{\hat{\tilde N}}
+\newcommand{\cOtil}{\hat{\tilde O}}
+\newcommand{\cPtil}{\hat{\tilde P}}
+\newcommand{\cQtil}{\hat{\tilde Q}}
+\newcommand{\cRtil}{\hat{\tilde R}}
+\newcommand{\cStil}{\hat{\tilde S}}
+\newcommand{\cTtil}{\hat{\tilde T}}
+\newcommand{\cUtil}{\hat{\tilde U}}
+\newcommand{\cVtil}{\hat{\tilde V}}
+\newcommand{\cWtil}{\hat{\tilde W}}
+\newcommand{\cXtil}{\hat{\tilde X}}
+\newcommand{\cYtil}{\hat{\tilde Y}}
+\newcommand{\cZtil}{\hat{\tilde Z}}
+
+% --- vector --- %
+
+\newcommand{\veca}{\mbox{\boldmath$a$}}
+\newcommand{\vecb}{\mbox{\boldmath$b$}}
+\newcommand{\vecc}{\mbox{\boldmath$c$}}
+\newcommand{\vecd}{\mbox{\boldmath$d$}}
+\newcommand{\vece}{\mbox{\boldmath$e$}}
+\newcommand{\vecf}{\mbox{\boldmath$f$}}
+\newcommand{\vecg}{\mbox{\boldmath$g$}}
+\newcommand{\vech}{\mbox{\boldmath$h$}}
+\newcommand{\veci}{\mbox{\boldmath$i$}}
+\newcommand{\vecj}{\mbox{\boldmath$j$}}
+\newcommand{\veck}{\mbox{\boldmath$k$}}
+\newcommand{\vecl}{\mbox{\boldmath$l$}}
+\newcommand{\vecm}{\mbox{\boldmath$m$}}
+\newcommand{\vecn}{\mbox{\boldmath$n$}}
+\newcommand{\veco}{\mbox{\boldmath$o$}}
+\newcommand{\vecp}{\mbox{\boldmath$p$}}
+\newcommand{\vecq}{\mbox{\boldmath$q$}}
+\newcommand{\vecr}{\mbox{\boldmath$r$}}
+\newcommand{\vecs}{\mbox{\boldmath$s$}}
+\newcommand{\vect}{\mbox{\boldmath$t$}}
+\newcommand{\vecu}{\mbox{\boldmath$u$}}
+\newcommand{\vecv}{\mbox{\boldmath$v$}}
+\newcommand{\vecw}{\mbox{\boldmath$w$}}
+\newcommand{\vecx}{\mbox{\boldmath$x$}}
+\newcommand{\vecy}{\mbox{\boldmath$y$}}
+\newcommand{\vecz}{\mbox{\boldmath$z$}}
+
+\newcommand{\vecA}{\mbox{\boldmath$A$}}
+\newcommand{\vecB}{\mbox{\boldmath$B$}}
+\newcommand{\vecC}{\mbox{\boldmath$C$}}
+\newcommand{\vecD}{\mbox{\boldmath$D$}}
+\newcommand{\vecE}{\mbox{\boldmath$E$}}
+\newcommand{\vecF}{\mbox{\boldmath$F$}}
+\newcommand{\vecG}{\mbox{\boldmath$G$}}
+\newcommand{\vecH}{\mbox{\boldmath$H$}}
+\newcommand{\vecI}{\mbox{\boldmath$I$}}
+\newcommand{\vecJ}{\mbox{\boldmath$J$}}
+\newcommand{\vecK}{\mbox{\boldmath$K$}}
+\newcommand{\vecL}{\mbox{\boldmath$L$}}
+\newcommand{\vecM}{\mbox{\boldmath$M$}}
+\newcommand{\vecN}{\mbox{\boldmath$N$}}
+\newcommand{\vecO}{\mbox{\boldmath$O$}}
+\newcommand{\vecP}{\mbox{\boldmath$P$}}
+\newcommand{\vecQ}{\mbox{\boldmath$Q$}}
+\newcommand{\vecR}{\mbox{\boldmath$R$}}
+\newcommand{\vecS}{\mbox{\boldmath$S$}}
+\newcommand{\vecT}{\mbox{\boldmath$T$}}
+\newcommand{\vecU}{\mbox{\boldmath$U$}}
+\newcommand{\vecV}{\mbox{\boldmath$V$}}
+\newcommand{\vecW}{\mbox{\boldmath$W$}}
+\newcommand{\vecX}{\mbox{\boldmath$X$}}
+\newcommand{\vecY}{\mbox{\boldmath$Y$}}
+\newcommand{\vecZ}{\mbox{\boldmath$Z$}}
+
+\newcommand{\veccA}{\mbox{\boldmath${\cal A}$}}
+\newcommand{\veccB}{\mbox{\boldmath${\cal B}$}}
+\newcommand{\veccC}{\mbox{\boldmath${\cal C}$}}
+\newcommand{\veccD}{\mbox{\boldmath${\cal G}$}}
+\newcommand{\veccE}{\mbox{\boldmath${\cal E}$}}
+\newcommand{\veccF}{\mbox{\boldmath${\cal F}$}}
+\newcommand{\veccG}{\mbox{\boldmath${\cal G}$}}
+\newcommand{\veccH}{\mbox{\boldmath${\cal H}$}}
+\newcommand{\veccI}{\mbox{\boldmath${\cal I}$}}
+\newcommand{\veccJ}{\mbox{\boldmath${\cal J}$}}
+\newcommand{\veccK}{\mbox{\boldmath${\cal K}$}}
+\newcommand{\veccL}{\mbox{\boldmath${\cal L}$}}
+\newcommand{\veccM}{\mbox{\boldmath${\cal M}$}}
+\newcommand{\veccN}{\mbox{\boldmath${\cal N}$}}
+\newcommand{\veccO}{\mbox{\boldmath${\cal O}$}}
+\newcommand{\veccP}{\mbox{\boldmath${\cal P}$}}
+\newcommand{\veccQ}{\mbox{\boldmath${\cal Q}$}}
+\newcommand{\veccR}{\mbox{\boldmath${\cal R}$}}
+\newcommand{\veccS}{\mbox{\boldmath${\cal S}$}}
+\newcommand{\veccT}{\mbox{\boldmath${\cal T}$}}
+\newcommand{\veccU}{\mbox{\boldmath${\cal U}$}}
+\newcommand{\veccV}{\mbox{\boldmath${\cal V}$}}
+\newcommand{\veccW}{\mbox{\boldmath${\cal W}$}}
+\newcommand{\veccX}{\mbox{\boldmath${\cal X}$}}
+\newcommand{\veccY}{\mbox{\boldmath${\cal Y}$}}
+\newcommand{\veccZ}{\mbox{\boldmath${\cal Z}$}}
+
+%%% bar (vector) %%%
+
+\newcommand{\vecabar}{\mbox{\boldmath$\overline a$}}
+\newcommand{\vecbbar}{\mbox{\boldmath$\overline b$}}
+\newcommand{\veccbar}{\mbox{\boldmath$\overline c$}}
+\newcommand{\vecdbar}{\mbox{\boldmath$\overline g$}}
+\newcommand{\vecebar}{\mbox{\boldmath$\overline e$}}
+\newcommand{\vecfbar}{\mbox{\boldmath$\overline f$}}
+\newcommand{\vecgbar}{\mbox{\boldmath$\overline g$}}
+\newcommand{\vechbar}{\mbox{\boldmath$\overline h$}}
+\newcommand{\vecibar}{\mbox{\boldmath$\overline i$}}
+\newcommand{\vecjbar}{\mbox{\boldmath$\overline j$}}
+\newcommand{\veckbar}{\mbox{\boldmath$\overline k$}}
+\newcommand{\veclbar}{\mbox{\boldmath$\overline l$}}
+\newcommand{\vecmbar}{\mbox{\boldmath$\overline m$}}
+\newcommand{\vecnbar}{\mbox{\boldmath$\overline n$}}
+\newcommand{\vecobar}{\mbox{\boldmath$\overline o$}}
+\newcommand{\vecpbar}{\mbox{\boldmath$\overline p$}}
+\newcommand{\vecqbar}{\mbox{\boldmath$\overline q$}}
+\newcommand{\vecrbar}{\mbox{\boldmath$\overline r$}}
+\newcommand{\vecsbar}{\mbox{\boldmath$\overline s$}}
+\newcommand{\vectbar}{\mbox{\boldmath$\overline t$}}
+\newcommand{\vecubar}{\mbox{\boldmath$\overline u$}}
+\newcommand{\vecvbar}{\mbox{\boldmath$\overline v$}}
+\newcommand{\vecwbar}{\mbox{\boldmath$\overline w$}}
+\newcommand{\vecxbar}{\mbox{\boldmath$\overline x$}}
+\newcommand{\vecybar}{\mbox{\boldmath$\overline y$}}
+\newcommand{\veczbar}{\mbox{\boldmath$\overline z$}}
+
+\newcommand{\vecAbar}{\mbox{\boldmath$\overline A$}}
+\newcommand{\vecBbar}{\mbox{\boldmath$\overline B$}}
+\newcommand{\vecCbar}{\mbox{\boldmath$\overline C$}}
+\newcommand{\vecDbar}{\mbox{\boldmath$\overline G$}}
+\newcommand{\vecEbar}{\mbox{\boldmath$\overline E$}}
+\newcommand{\vecFbar}{\mbox{\boldmath$\overline F$}}
+\newcommand{\vecGbar}{\mbox{\boldmath$\overline G$}}
+\newcommand{\vecHbar}{\mbox{\boldmath$\overline H$}}
+\newcommand{\vecIbar}{\mbox{\boldmath$\overline I$}}
+\newcommand{\vecJbar}{\mbox{\boldmath$\overline J$}}
+\newcommand{\vecKbar}{\mbox{\boldmath$\overline K$}}
+\newcommand{\vecLbar}{\mbox{\boldmath$\overline L$}}
+\newcommand{\vecMbar}{\mbox{\boldmath$\overline M$}}
+\newcommand{\vecNbar}{\mbox{\boldmath$\overline N$}}
+\newcommand{\vecObar}{\mbox{\boldmath$\overline O$}}
+\newcommand{\vecPbar}{\mbox{\boldmath$\overline P$}}
+\newcommand{\vecQbar}{\mbox{\boldmath$\overline Q$}}
+\newcommand{\vecRbar}{\mbox{\boldmath$\overline R$}}
+\newcommand{\vecSbar}{\mbox{\boldmath$\overline S$}}
+\newcommand{\vecTbar}{\mbox{\boldmath$\overline T$}}
+\newcommand{\vecUbar}{\mbox{\boldmath$\overline U$}}
+\newcommand{\vecVbar}{\mbox{\boldmath$\overline V$}}
+\newcommand{\vecWbar}{\mbox{\boldmath$\overline W$}}
+\newcommand{\vecXbar}{\mbox{\boldmath$\overline X$}}
+\newcommand{\vecYbar}{\mbox{\boldmath$\overline Y$}}
+\newcommand{\vecZbar}{\mbox{\boldmath$\overline Z$}}
+
+\newcommand{\veccAbar}{\mbox{\boldmath$\overline{\cal A}$}}
+\newcommand{\veccBbar}{\mbox{\boldmath$\overline{\cal B}$}}
+\newcommand{\veccCbar}{\mbox{\boldmath$\overline{\cal C}$}}
+\newcommand{\veccDbar}{\mbox{\boldmath$\overline{\cal G}$}}
+\newcommand{\veccEbar}{\mbox{\boldmath$\overline{\cal E}$}}
+\newcommand{\veccFbar}{\mbox{\boldmath$\overline{\cal F}$}}
+\newcommand{\veccGbar}{\mbox{\boldmath$\overline{\cal G}$}}
+\newcommand{\veccHbar}{\mbox{\boldmath$\overline{\cal H}$}}
+\newcommand{\veccIbar}{\mbox{\boldmath$\overline{\cal I}$}}
+\newcommand{\veccJbar}{\mbox{\boldmath$\overline{\cal J}$}}
+\newcommand{\veccKbar}{\mbox{\boldmath$\overline{\cal K}$}}
+\newcommand{\veccLbar}{\mbox{\boldmath$\overline{\cal L}$}}
+\newcommand{\veccMbar}{\mbox{\boldmath$\overline{\cal M}$}}
+\newcommand{\veccNbar}{\mbox{\boldmath$\overline{\cal N}$}}
+\newcommand{\veccObar}{\mbox{\boldmath$\overline{\cal O}$}}
+\newcommand{\veccPbar}{\mbox{\boldmath$\overline{\cal P}$}}
+\newcommand{\veccQbar}{\mbox{\boldmath$\overline{\cal Q}$}}
+\newcommand{\veccRbar}{\mbox{\boldmath$\overline{\cal R}$}}
+\newcommand{\veccSbar}{\mbox{\boldmath$\overline{\cal S}$}}
+\newcommand{\veccTbar}{\mbox{\boldmath$\overline{\cal T}$}}
+\newcommand{\veccUbar}{\mbox{\boldmath$\overline{\cal U}$}}
+\newcommand{\veccVbar}{\mbox{\boldmath$\overline{\cal V}$}}
+\newcommand{\veccWbar}{\mbox{\boldmath$\overline{\cal W}$}}
+\newcommand{\veccXbar}{\mbox{\boldmath$\overline{\cal X}$}}
+\newcommand{\veccYbar}{\mbox{\boldmath$\overline{\cal Y}$}}
+\newcommand{\veccZbar}{\mbox{\boldmath$\overline{\cal Z}$}}
+
+% --- hat (vector) --- %
+
+\newcommand{\vecahat}{\mbox{\boldmath$\hat a$}}
+\newcommand{\vecbhat}{\mbox{\boldmath$\hat b$}}
+\newcommand{\vecchat}{\mbox{\boldmath$\hat c$}}
+\newcommand{\vecdhat}{\mbox{\boldmath$\hat g$}}
+\newcommand{\vecehat}{\mbox{\boldmath$\hat e$}}
+\newcommand{\vecfhat}{\mbox{\boldmath$\hat f$}}
+\newcommand{\vecghat}{\mbox{\boldmath$\hat g$}}
+\newcommand{\vechhat}{\mbox{\boldmath$\hat h$}}
+\newcommand{\vecihat}{\mbox{\boldmath$\hat i$}}
+\newcommand{\vecjhat}{\mbox{\boldmath$\hat j$}}
+\newcommand{\veckhat}{\mbox{\boldmath$\hat k$}}
+\newcommand{\veclhat}{\mbox{\boldmath$\hat l$}}
+\newcommand{\vecmhat}{\mbox{\boldmath$\hat m$}}
+\newcommand{\vecnhat}{\mbox{\boldmath$\hat n$}}
+\newcommand{\vecohat}{\mbox{\boldmath$\hat o$}}
+\newcommand{\vecphat}{\mbox{\boldmath$\hat p$}}
+\newcommand{\vecqhat}{\mbox{\boldmath$\hat q$}}
+\newcommand{\vecrhat}{\mbox{\boldmath$\hat r$}}
+\newcommand{\vecshat}{\mbox{\boldmath$\hat s$}}
+\newcommand{\vecthat}{\mbox{\boldmath$\hat t$}}
+\newcommand{\vecuhat}{\mbox{\boldmath$\hat u$}}
+\newcommand{\vecvhat}{\mbox{\boldmath$\hat v$}}
+\newcommand{\vecwhat}{\mbox{\boldmath$\hat w$}}
+\newcommand{\vecxhat}{\mbox{\boldmath$\hat x$}}
+\newcommand{\vecyhat}{\mbox{\boldmath$\hat y$}}
+\newcommand{\veczhat}{\mbox{\boldmath$\hat z$}}
+
+\newcommand{\vecAhat}{\mbox{\boldmath$\hat A$}}
+\newcommand{\vecBhat}{\mbox{\boldmath$\hat B$}}
+\newcommand{\vecChat}{\mbox{\boldmath$\hat C$}}
+\newcommand{\vecDhat}{\mbox{\boldmath$\hat G$}}
+\newcommand{\vecEhat}{\mbox{\boldmath$\hat E$}}
+\newcommand{\vecFhat}{\mbox{\boldmath$\hat F$}}
+\newcommand{\vecGhat}{\mbox{\boldmath$\hat G$}}
+\newcommand{\vecHhat}{\mbox{\boldmath$\hat H$}}
+\newcommand{\vecIhat}{\mbox{\boldmath$\hat I$}}
+\newcommand{\vecJhat}{\mbox{\boldmath$\hat J$}}
+\newcommand{\vecKhat}{\mbox{\boldmath$\hat K$}}
+\newcommand{\vecLhat}{\mbox{\boldmath$\hat L$}}
+\newcommand{\vecMhat}{\mbox{\boldmath$\hat M$}}
+\newcommand{\vecNhat}{\mbox{\boldmath$\hat N$}}
+\newcommand{\vecOhat}{\mbox{\boldmath$\hat O$}}
+\newcommand{\vecPhat}{\mbox{\boldmath$\hat P$}}
+\newcommand{\vecQhat}{\mbox{\boldmath$\hat Q$}}
+\newcommand{\vecRhat}{\mbox{\boldmath$\hat R$}}
+\newcommand{\vecShat}{\mbox{\boldmath$\hat S$}}
+\newcommand{\vecThat}{\mbox{\boldmath$\hat T$}}
+\newcommand{\vecUhat}{\mbox{\boldmath$\hat U$}}
+\newcommand{\vecVhat}{\mbox{\boldmath$\hat V$}}
+\newcommand{\vecWhat}{\mbox{\boldmath$\hat W$}}
+\newcommand{\vecXhat}{\mbox{\boldmath$\hat X$}}
+\newcommand{\vecYhat}{\mbox{\boldmath$\hat Y$}}
+\newcommand{\vecZhat}{\mbox{\boldmath$\hat Z$}}
+
+\newcommand{\veccAhat}{\mbox{\boldmath$\hat{\cal A}$}}
+\newcommand{\veccBhat}{\mbox{\boldmath$\hat{\cal B}$}}
+\newcommand{\veccChat}{\mbox{\boldmath$\hat{\cal C}$}}
+\newcommand{\veccDhat}{\mbox{\boldmath$\hat{\cal G}$}}
+\newcommand{\veccEhat}{\mbox{\boldmath$\hat{\cal E}$}}
+\newcommand{\veccFhat}{\mbox{\boldmath$\hat{\cal F}$}}
+\newcommand{\veccGhat}{\mbox{\boldmath$\hat{\cal G}$}}
+\newcommand{\veccHhat}{\mbox{\boldmath$\hat{\cal H}$}}
+\newcommand{\veccIhat}{\mbox{\boldmath$\hat{\cal I}$}}
+\newcommand{\veccJhat}{\mbox{\boldmath$\hat{\cal J}$}}
+\newcommand{\veccKhat}{\mbox{\boldmath$\hat{\cal K}$}}
+\newcommand{\veccLhat}{\mbox{\boldmath$\hat{\cal L}$}}
+\newcommand{\veccMhat}{\mbox{\boldmath$\hat{\cal M}$}}
+\newcommand{\veccNhat}{\mbox{\boldmath$\hat{\cal N}$}}
+\newcommand{\veccOhat}{\mbox{\boldmath$\hat{\cal O}$}}
+\newcommand{\veccPhat}{\mbox{\boldmath$\hat{\cal P}$}}
+\newcommand{\veccQhat}{\mbox{\boldmath$\hat{\cal Q}$}}
+\newcommand{\veccRhat}{\mbox{\boldmath$\hat{\cal R}$}}
+\newcommand{\veccShat}{\mbox{\boldmath$\hat{\cal S}$}}
+\newcommand{\veccThat}{\mbox{\boldmath$\hat{\cal T}$}}
+\newcommand{\veccUhat}{\mbox{\boldmath$\hat{\cal U}$}}
+\newcommand{\veccVhat}{\mbox{\boldmath$\hat{\cal V}$}}
+\newcommand{\veccWhat}{\mbox{\boldmath$\hat{\cal W}$}}
+\newcommand{\veccXhat}{\mbox{\boldmath$\hat{\cal X}$}}
+\newcommand{\veccYhat}{\mbox{\boldmath$\hat{\cal Y}$}}
+\newcommand{\veccZhat}{\mbox{\boldmath$\hat{\cal Z}$}}
+
+% --- tilde (vector) --- %
+
+\newcommand{\vecatil}{\mbox{\boldmath$\tilde a$}}
+\newcommand{\vecbtil}{\mbox{\boldmath$\tilde b$}}
+\newcommand{\vecctil}{\mbox{\boldmath$\tilde c$}}
+\newcommand{\vecdtil}{\mbox{\boldmath$\tilde g$}}
+\newcommand{\vecetil}{\mbox{\boldmath$\tilde e$}}
+\newcommand{\vecftil}{\mbox{\boldmath$\tilde f$}}
+\newcommand{\vecgtil}{\mbox{\boldmath$\tilde g$}}
+\newcommand{\vechtil}{\mbox{\boldmath$\tilde h$}}
+\newcommand{\vecitil}{\mbox{\boldmath$\tilde i$}}
+\newcommand{\vecjtil}{\mbox{\boldmath$\tilde j$}}
+\newcommand{\vecktil}{\mbox{\boldmath$\tilde k$}}
+\newcommand{\vecltil}{\mbox{\boldmath$\tilde l$}}
+\newcommand{\vecmtil}{\mbox{\boldmath$\tilde m$}}
+\newcommand{\vecntil}{\mbox{\boldmath$\tilde n$}}
+\newcommand{\vecotil}{\mbox{\boldmath$\tilde o$}}
+\newcommand{\vecptil}{\mbox{\boldmath$\tilde p$}}
+\newcommand{\vecqtil}{\mbox{\boldmath$\tilde q$}}
+\newcommand{\vecrtil}{\mbox{\boldmath$\tilde r$}}
+\newcommand{\vecstil}{\mbox{\boldmath$\tilde s$}}
+\newcommand{\vecttil}{\mbox{\boldmath$\tilde t$}}
+\newcommand{\vecutil}{\mbox{\boldmath$\tilde u$}}
+\newcommand{\vecvtil}{\mbox{\boldmath$\tilde v$}}
+\newcommand{\vecwtil}{\mbox{\boldmath$\tilde w$}}
+\newcommand{\vecxtil}{\mbox{\boldmath$\tilde x$}}
+\newcommand{\vecytil}{\mbox{\boldmath$\tilde y$}}
+\newcommand{\vecztil}{\mbox{\boldmath$\tilde z$}}
+
+\newcommand{\vecAtil}{\mbox{\boldmath$\tilde A$}}
+\newcommand{\vecBtil}{\mbox{\boldmath$\tilde B$}}
+\newcommand{\vecCtil}{\mbox{\boldmath$\tilde C$}}
+\newcommand{\vecDtil}{\mbox{\boldmath$\tilde G$}}
+\newcommand{\vecEtil}{\mbox{\boldmath$\tilde E$}}
+\newcommand{\vecFtil}{\mbox{\boldmath$\tilde F$}}
+\newcommand{\vecGtil}{\mbox{\boldmath$\tilde G$}}
+\newcommand{\vecHtil}{\mbox{\boldmath$\tilde H$}}
+\newcommand{\vecItil}{\mbox{\boldmath$\tilde I$}}
+\newcommand{\vecJtil}{\mbox{\boldmath$\tilde J$}}
+\newcommand{\vecKtil}{\mbox{\boldmath$\tilde K$}}
+\newcommand{\vecLtil}{\mbox{\boldmath$\tilde L$}}
+\newcommand{\vecMtil}{\mbox{\boldmath$\tilde M$}}
+\newcommand{\vecNtil}{\mbox{\boldmath$\tilde N$}}
+\newcommand{\vecOtil}{\mbox{\boldmath$\tilde O$}}
+\newcommand{\vecPtil}{\mbox{\boldmath$\tilde P$}}
+\newcommand{\vecQtil}{\mbox{\boldmath$\tilde Q$}}
+\newcommand{\vecRtil}{\mbox{\boldmath$\tilde R$}}
+\newcommand{\vecStil}{\mbox{\boldmath$\tilde S$}}
+\newcommand{\vecTtil}{\mbox{\boldmath$\tilde T$}}
+\newcommand{\vecUtil}{\mbox{\boldmath$\tilde U$}}
+\newcommand{\vecVtil}{\mbox{\boldmath$\tilde V$}}
+\newcommand{\vecWtil}{\mbox{\boldmath$\tilde W$}}
+\newcommand{\vecXtil}{\mbox{\boldmath$\tilde X$}}
+\newcommand{\vecYtil}{\mbox{\boldmath$\tilde Y$}}
+\newcommand{\vecZtil}{\mbox{\boldmath$\tilde Z$}}
+
+\newcommand{\veccAtil}{\mbox{\boldmath$\tilde{\cal A}$}}
+\newcommand{\veccBtil}{\mbox{\boldmath$\tilde{\cal B}$}}
+\newcommand{\veccCtil}{\mbox{\boldmath$\tilde{\cal C}$}}
+\newcommand{\veccDtil}{\mbox{\boldmath$\tilde{\cal G}$}}
+\newcommand{\veccEtil}{\mbox{\boldmath$\tilde{\cal E}$}}
+\newcommand{\veccFtil}{\mbox{\boldmath$\tilde{\cal F}$}}
+\newcommand{\veccGtil}{\mbox{\boldmath$\tilde{\cal G}$}}
+\newcommand{\veccHtil}{\mbox{\boldmath$\tilde{\cal H}$}}
+\newcommand{\veccItil}{\mbox{\boldmath$\tilde{\cal I}$}}
+\newcommand{\veccJtil}{\mbox{\boldmath$\tilde{\cal J}$}}
+\newcommand{\veccKtil}{\mbox{\boldmath$\tilde{\cal K}$}}
+\newcommand{\veccLtil}{\mbox{\boldmath$\tilde{\cal L}$}}
+\newcommand{\veccMtil}{\mbox{\boldmath$\tilde{\cal M}$}}
+\newcommand{\veccNtil}{\mbox{\boldmath$\tilde{\cal N}$}}
+\newcommand{\veccOtil}{\mbox{\boldmath$\tilde{\cal O}$}}
+\newcommand{\veccPtil}{\mbox{\boldmath$\tilde{\cal P}$}}
+\newcommand{\veccQtil}{\mbox{\boldmath$\tilde{\cal Q}$}}
+\newcommand{\veccRtil}{\mbox{\boldmath$\tilde{\cal R}$}}
+\newcommand{\veccStil}{\mbox{\boldmath$\tilde{\cal S}$}}
+\newcommand{\veccTtil}{\mbox{\boldmath$\tilde{\cal T}$}}
+\newcommand{\veccUtil}{\mbox{\boldmath$\tilde{\cal U}$}}
+\newcommand{\veccVtil}{\mbox{\boldmath$\tilde{\cal V}$}}
+\newcommand{\veccWtil}{\mbox{\boldmath$\tilde{\cal W}$}}
+\newcommand{\veccXtil}{\mbox{\boldmath$\tilde{\cal X}$}}
+\newcommand{\veccYtil}{\mbox{\boldmath$\tilde{\cal Y}$}}
+\newcommand{\veccZtil}{\mbox{\boldmath$\tilde{\cal Z}$}}
+
+% ---------- Greek Letters ---------- %
+
+\newcommand{\al}{\alpha}
+\newcommand{\gam}{\gamma}
+% \newcommand{\the}{\theta}
+\newcommand{\vthe}{\vartheta}
+\newcommand{\epsi}{\varepsilon}
+\newcommand{\kap}{\kappa}
+\newcommand{\lam}{\lambda}
+\newcommand{\vpi}{\varpi}
+\newcommand{\vrho}{\varrho}
+\newcommand{\sig}{\sigma}
+\newcommand{\vsig}{\varsigma}
+\newcommand{\upsi}{\upsilon}
+\newcommand{\vphi}{\varphi}
+\newcommand{\ome}{\omega}
+\newcommand{\Gam}{\Gamma}
+\newcommand{\Del}{\Delta}
+\newcommand{\The}{\Theta}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\Sig}{\Sigma}
+\newcommand{\Upsi}{\Upsilon}
+\newcommand{\Ome}{\Omega}
+
+
+% --- bar (scalar) --- %
+
+\newcommand{\albar}{\overline\alpha}
+\newcommand{\betabar}{\overline\beta}
+\newcommand{\gambar}{\overline\gamma}
+\newcommand{\delbar}{\overline\delta}
+\newcommand{\epbar}{\overline\epsilon}
+\newcommand{\epsibar}{\overline\varepsilon}
+\newcommand{\zetabar}{\overline\zeta}
+\newcommand{\etabar}{\overline\eta}
+\newcommand{\thebar}{\overline\theta}
+\newcommand{\vthebar}{\overline\vartheta}
+\newcommand{\iotabar}{\overline\iota}
+\newcommand{\kapbar}{\overline\kappa}
+\newcommand{\lambar}{\overline\lambda}
+\newcommand{\mubar}{\overline\mu}
+\newcommand{\nubar}{\overline\nu}
+\newcommand{\xibar}{\overline\xi}
+\newcommand{\pibar}{\overline\pi}
+\newcommand{\vpibar}{\overline\varpi}
+\newcommand{\rhobar}{\overline\rho}
+\newcommand{\vrhobar}{\overline\varrho}
+\newcommand{\sigbar}{\overline\sigma}
+\newcommand{\vsigbar}{\overline\varsigma}
+\newcommand{\taubar}{\overline\tau}
+\newcommand{\upsibar}{\overline\upsilon}
+\newcommand{\phibar}{\overline\phi}
+\newcommand{\vphibar}{\overline\varphi}
+\newcommand{\chibar}{\overline\chi}
+\newcommand{\psibar}{\overline\psi}
+\newcommand{\omebar}{\overline\omega}
+\newcommand{\Gambar}{\overline\Gamma}
+\newcommand{\Delbar}{\overline\Delta}
+\newcommand{\Thebar}{\overline\Theta}
+\newcommand{\Lambar}{\overline\Lambda}
+\newcommand{\Xibar}{\overline\Xi}
+\newcommand{\Pibar}{\overline\Pi}
+\newcommand{\Sigbar}{\overline\Sigma}
+\newcommand{\Upsibar}{\overline\Upsilon}
+\newcommand{\Phibar}{\overline\Phi}
+\newcommand{\Psibar}{\overline\Psi}
+\newcommand{\Omebar}{\overline\Omega}
+
+
+% --- hat (scalar) --- %
+
+\newcommand{\alhat}{\hat\alpha}
+\newcommand{\betahat}{\hat\beta}
+\newcommand{\gamhat}{\hat\gamma}
+\newcommand{\delhat}{\hat\delta}
+\newcommand{\ephat}{\hat\epsilon}
+\newcommand{\epsihat}{\hat\varepsilon}
+\newcommand{\zetahat}{\hat\zeta}
+\newcommand{\etahat}{\hat\eta}
+\newcommand{\thehat}{\hat\theta}
+\newcommand{\vthehat}{\hat\vartheta}
+\newcommand{\iotahat}{\hat\iota}
+\newcommand{\kaphat}{\hat\kappa}
+\newcommand{\lamhat}{\hat\lambda}
+\newcommand{\muhat}{\hat\mu}
+\newcommand{\nuhat}{\hat\nu}
+\newcommand{\xihat}{\hat\xi}
+\newcommand{\pihat}{\hat\pi}
+\newcommand{\vpihat}{\hat\varpi}
+\newcommand{\rhohat}{\hat\rho}
+\newcommand{\vrhohat}{\hat\varrho}
+\newcommand{\sighat}{\hat\sigma}
+\newcommand{\vsighat}{\hat\varsigma}
+\newcommand{\tauhat}{\hat\tau}
+\newcommand{\upsihat}{\hat\upsilon}
+\newcommand{\phihat}{\hat\phi}
+\newcommand{\vphihat}{\hat\varphi}
+\newcommand{\chihat}{\hat\chi}
+\newcommand{\psihat}{\hat\psi}
+\newcommand{\omehat}{\hat\omega}
+\newcommand{\Gamhat}{\hat\Gamma}
+\newcommand{\Delhat}{\hat\Delta}
+\newcommand{\Thehat}{\hat\Theta}
+\newcommand{\Lamhat}{\hat\Lambda}
+\newcommand{\Xihat}{\hat\Xi}
+\newcommand{\Pihat}{\hat\Pi}
+\newcommand{\Sighat}{\hat\Sigma}
+\newcommand{\Upsihat}{\hat\Upsilon}
+\newcommand{\Phihat}{\hat\Phi}
+\newcommand{\Psihat}{\hat\Psi}
+\newcommand{\Omehat}{\hat\Omega}
+
+% --- tilde (scalar) --- %
+
+\newcommand{\altil}{\tilde\alpha}
+\newcommand{\betatil}{\tilde\beta}
+\newcommand{\gamtil}{\tilde\gamma}
+\newcommand{\deltil}{\tilde\delta}
+\newcommand{\eptil}{\tilde\epsilon}
+\newcommand{\epsitil}{\tilde\varepsilon}
+\newcommand{\zetatil}{\tilde\zeta}
+\newcommand{\etatil}{\tilde\eta}
+\newcommand{\thetil}{\tilde\theta}
+\newcommand{\vthetil}{\tilde\vartheta}
+\newcommand{\iotatil}{\tilde\iota}
+\newcommand{\kaptil}{\tilde\kappa}
+\newcommand{\lamtil}{\tilde\lambda}
+\newcommand{\mutil}{\tilde\mu}
+\newcommand{\nutil}{\tilde\nu}
+\newcommand{\xitil}{\tilde\xi}
+\newcommand{\pitil}{\tilde\pi}
+\newcommand{\vpitil}{\tilde\varpi}
+\newcommand{\rhotil}{\tilde\rho}
+\newcommand{\vrhotil}{\tilde\varrho}
+\newcommand{\sigtil}{\tilde\sigma}
+\newcommand{\vsigtil}{\tilde\varsigma}
+\newcommand{\tautil}{\tilde\tau}
+\newcommand{\upsitil}{\tilde\upsilon}
+\newcommand{\phitil}{\tilde\phi}
+\newcommand{\vphitil}{\tilde\varphi}
+\newcommand{\chitil}{\tilde\chi}
+\newcommand{\psitil}{\tilde\psi}
+\newcommand{\ometil}{\tilde\omega}
+\newcommand{\Gamtil}{\tilde\Gamma}
+\newcommand{\Deltil}{\tilde\Delta}
+\newcommand{\Thetil}{\tilde\Theta}
+\newcommand{\Lamtil}{\tilde\Lambda}
+\newcommand{\Xitil}{\tilde\Xi}
+\newcommand{\Pitil}{\tilde\Pi}
+\newcommand{\Sigtil}{\tilde\Sigma}
+\newcommand{\Upsitil}{\tilde\Upsilon}
+\newcommand{\Phitil}{\tilde\Phi}
+\newcommand{\Psitil}{\tilde\Psi}
+\newcommand{\Ometil}{\tilde\Omega}
+
+% --- vector --- %
+
+\newcommand{\vecal}{\mbox{\boldmath$\alpha$}}
+\newcommand{\vecbeta}{\mbox{\boldmath$\beta$}}
+\newcommand{\vecgam}{\mbox{\boldmath$\gamma$}}
+\newcommand{\vecdel}{\mbox{\boldmath$\delta$}}
+\newcommand{\vecep}{\mbox{\boldmath$\epsilon$}}
+\newcommand{\vecepsi}{\mbox{\boldmath$\varepsilon$}}
+\newcommand{\veczeta}{\mbox{\boldmath$\zeta$}}
+\newcommand{\veceta}{\mbox{\boldmath$\eta$}}
+\newcommand{\vecthe}{\mbox{\boldmath$\theta$}}
+\newcommand{\vecvthe}{\mbox{\boldmath$\vartheta$}}
+\newcommand{\veciota}{\mbox{\boldmath$\iota$}}
+\newcommand{\veckap}{\mbox{\boldmath$\kappa$}}
+\newcommand{\veclam}{\mbox{\boldmath$\lambda$}}
+\newcommand{\vecmu}{\mbox{\boldmath$\mu$}}
+\newcommand{\vecnu}{\mbox{\boldmath$\nu$}}
+\newcommand{\vecxi}{\mbox{\boldmath$\xi$}}
+\newcommand{\vecpi}{\mbox{\boldmath$\pi$}}
+\newcommand{\vecvpi}{\mbox{\boldmath$\varpi$}}
+\newcommand{\vecrho}{\mbox{\boldmath$\rho$}}
+\newcommand{\vecvrho}{\mbox{\boldmath$\varrho$}}
+\newcommand{\vecsig}{\mbox{\boldmath$\sigma$}}
+\newcommand{\vecvsig}{\mbox{\boldmath$\varsigma$}}
+\newcommand{\vectau}{\mbox{\boldmath$\tau$}}
+\newcommand{\vecupsi}{\mbox{\boldmath$\upsilon$}}
+\newcommand{\vecphi}{\mbox{\boldmath$\phi$}}
+\newcommand{\vecvphi}{\mbox{\boldmath$\varphi$}}
+\newcommand{\vecchi}{\mbox{\boldmath$\chi$}}
+\newcommand{\vecpsi}{\mbox{\boldmath$\psi$}}
+\newcommand{\vecome}{\mbox{\boldmath$\omega$}}
+\newcommand{\vecGam}{\mbox{\boldmath$\Gamma$}}
+\newcommand{\vecDel}{\mbox{\boldmath$\Delta$}}
+\newcommand{\vecThe}{\mbox{\boldmath$\Theta$}}
+\newcommand{\vecLam}{\mbox{\boldmath$\Lambda$}}
+\newcommand{\vecXi}{\mbox{\boldmath$\Xi$}}
+\newcommand{\vecPi}{\mbox{\boldmath$\Pi$}}
+\newcommand{\vecSig}{\mbox{\boldmath$\Sigma$}}
+\newcommand{\vecUpsi}{\mbox{\boldmath$\Upsilon$}}
+\newcommand{\vecPhi}{\mbox{\boldmath$\Phi$}}
+\newcommand{\vecPsi}{\mbox{\boldmath$\Psi$}}
+\newcommand{\vecOme}{\mbox{\boldmath$\Omega$}}
+
+% --- bar (vector) --- %
+
+\newcommand{\vecalbar}{\mbox{\boldmath$\overline\alpha$}}
+\newcommand{\vecbetabar}{\mbox{\boldmath$\overline\beta$}}
+\newcommand{\vecgambar}{\mbox{\boldmath$\overline\gamma$}}
+\newcommand{\vecdelbar}{\mbox{\boldmath$\overline\delta$}}
+\newcommand{\vecepbar}{\mbox{\boldmath$\overline\epsilon$}}
+\newcommand{\vecepsibar}{\mbox{\boldmath$\overline\varepsilon$}}
+\newcommand{\veczetabar}{\mbox{\boldmath$\overline\zeta$}}
+\newcommand{\vecetabar}{\mbox{\boldmath$\overline\eta$}}
+\newcommand{\vecthebar}{\mbox{\boldmath$\overline\theta$}}
+\newcommand{\vecvthebar}{\mbox{\boldmath$\overline\vartheta$}}
+\newcommand{\veciotabar}{\mbox{\boldmath$\overline\iota$}}
+\newcommand{\veckapbar}{\mbox{\boldmath$\overline\kappa$}}
+\newcommand{\veclambar}{\mbox{\boldmath$\overline\lambda$}}
+\newcommand{\vecmubar}{\mbox{\boldmath$\overline\mu$}}
+\newcommand{\vecnubar}{\mbox{\boldmath$\overline\nu$}}
+\newcommand{\vecxibar}{\mbox{\boldmath$\overline\xi$}}
+\newcommand{\vecpibar}{\mbox{\boldmath$\overline\pi$}}
+\newcommand{\vecvpibar}{\mbox{\boldmath$\overline\varpi$}}
+\newcommand{\vecrhobar}{\mbox{\boldmath$\overline\rho$}}
+\newcommand{\vecvrhobar}{\mbox{\boldmath$\overline\varrho$}}
+\newcommand{\vecsigbar}{\mbox{\boldmath$\overline\sigma$}}
+\newcommand{\vecvsigbar}{\mbox{\boldmath$\overline\varsigma$}}
+\newcommand{\vectaubar}{\mbox{\boldmath$\overline\tau$}}
+\newcommand{\vecupsibar}{\mbox{\boldmath$\overline\upsilon$}}
+\newcommand{\vecphibar}{\mbox{\boldmath$\overline\phi$}}
+\newcommand{\vecvphibar}{\mbox{\boldmath$\overline\varphi$}}
+\newcommand{\vecchibar}{\mbox{\boldmath$\overline\chi$}}
+\newcommand{\vecpsibar}{\mbox{\boldmath$\overline\psi$}}
+\newcommand{\vecomebar}{\mbox{\boldmath$\overline\omega$}}
+\newcommand{\vecGambar}{\mbox{\boldmath$\overline\Gamma$}}
+\newcommand{\vecDelbar}{\mbox{\boldmath$\overline\Delta$}}
+\newcommand{\vecThebar}{\mbox{\boldmath$\overline\Theta$}}
+\newcommand{\vecLambar}{\mbox{\boldmath$\overline\Lambda$}}
+\newcommand{\vecXibar}{\mbox{\boldmath$\overline\Xi$}}
+\newcommand{\vecPibar}{\mbox{\boldmath$\overline\Pi$}}
+\newcommand{\vecSigbar}{\mbox{\boldmath$\overline\Sigma$}}
+\newcommand{\vecUpsibar}{\mbox{\boldmath$\overline\Upsilon$}}
+\newcommand{\vecPhibar}{\mbox{\boldmath$\overline\Phi$}}
+\newcommand{\vecPsibar}{\mbox{\boldmath$\overline\Psi$}}
+\newcommand{\vecOmebar}{\mbox{\boldmath$\overline\Omega$}}
+
+% --- hat (vector) --- %
+
+\newcommand{\vecalhat}{\mbox{\boldmath$\hat\alpha$}}
+\newcommand{\vecbetahat}{\mbox{\boldmath$\hat\beta$}}
+\newcommand{\vecgamhat}{\mbox{\boldmath$\hat\gamma$}}
+\newcommand{\vecdelhat}{\mbox{\boldmath$\hat\delta$}}
+\newcommand{\vecephat}{\mbox{\boldmath$\hat\epsilon$}}
+\newcommand{\vecepsihat}{\mbox{\boldmath$\hat\varepsilon$}}
+\newcommand{\veczetahat}{\mbox{\boldmath$\hat\zeta$}}
+\newcommand{\vecetahat}{\mbox{\boldmath$\hat\eta$}}
+\newcommand{\vecthehat}{\mbox{\boldmath$\hat\theta$}}
+\newcommand{\vecvthehat}{\mbox{\boldmath$\hat\vartheta$}}
+\newcommand{\veciotahat}{\mbox{\boldmath$\hat\iota$}}
+\newcommand{\veckaphat}{\mbox{\boldmath$\hat\kappa$}}
+\newcommand{\veclamhat}{\mbox{\boldmath$\hat\lambda$}}
+\newcommand{\vecmuhat}{\mbox{\boldmath$\hat\mu$}}
+\newcommand{\vecnuhat}{\mbox{\boldmath$\hat\nu$}}
+\newcommand{\vecxihat}{\mbox{\boldmath$\hat\xi$}}
+\newcommand{\vecpihat}{\mbox{\boldmath$\hat\pi$}}
+\newcommand{\vecvpihat}{\mbox{\boldmath$\hat\varpi$}}
+\newcommand{\vecrhohat}{\mbox{\boldmath$\hat\rho$}}
+\newcommand{\vecvrhohat}{\mbox{\boldmath$\hat\varrho$}}
+\newcommand{\vecsighat}{\mbox{\boldmath$\hat\sigma$}}
+\newcommand{\vecvsighat}{\mbox{\boldmath$\hat\varsigma$}}
+\newcommand{\vectauhat}{\mbox{\boldmath$\hat\tau$}}
+\newcommand{\vecupsihat}{\mbox{\boldmath$\hat\upsilon$}}
+\newcommand{\vecphihat}{\mbox{\boldmath$\hat\phi$}}
+\newcommand{\vecvphihat}{\mbox{\boldmath$\hat\varphi$}}
+\newcommand{\vecchihat}{\mbox{\boldmath$\hat\chi$}}
+\newcommand{\vecpsihat}{\mbox{\boldmath$\hat\psi$}}
+\newcommand{\vecomehat}{\mbox{\boldmath$\hat\omega$}}
+\newcommand{\vecGamhat}{\mbox{\boldmath$\hat\Gamma$}}
+\newcommand{\vecDelhat}{\mbox{\boldmath$\hat\Delta$}}
+\newcommand{\vecThehat}{\mbox{\boldmath$\hat\Theta$}}
+\newcommand{\vecLamhat}{\mbox{\boldmath$\hat\Lambda$}}
+\newcommand{\vecXihat}{\mbox{\boldmath$\hat\Xi$}}
+\newcommand{\vecPihat}{\mbox{\boldmath$\hat\Pi$}}
+\newcommand{\vecSighat}{\mbox{\boldmath$\hat\Sigma$}}
+\newcommand{\vecUpsihat}{\mbox{\boldmath$\hat\Upsilon$}}
+\newcommand{\vecPhihat}{\mbox{\boldmath$\hat\Phi$}}
+\newcommand{\vecPsihat}{\mbox{\boldmath$\hat\Psi$}}
+\newcommand{\vecOmehat}{\mbox{\boldmath$\hat\Omega$}}
+
+% --- tilde (vector) --- %
+
+\newcommand{\vecaltil}{\mbox{\boldmath$\tilde\alpha$}}
+\newcommand{\vecbetatil}{\mbox{\boldmath$\tilde\beta$}}
+\newcommand{\vecgamtil}{\mbox{\boldmath$\tilde\gamma$}}
+\newcommand{\vecdeltil}{\mbox{\boldmath$\tilde\delta$}}
+\newcommand{\veceptil}{\mbox{\boldmath$\tilde\epsilon$}}
+\newcommand{\vecepsitil}{\mbox{\boldmath$\tilde\varepsilon$}}
+\newcommand{\veczetatil}{\mbox{\boldmath$\tilde\zeta$}}
+\newcommand{\vecetatil}{\mbox{\boldmath$\tilde\eta$}}
+\newcommand{\vecthetil}{\mbox{\boldmath$\tilde\theta$}}
+\newcommand{\vecvthetil}{\mbox{\boldmath$\tilde\vartheta$}}
+\newcommand{\veciotatil}{\mbox{\boldmath$\tilde\iota$}}
+\newcommand{\veckaptil}{\mbox{\boldmath$\tilde\kappa$}}
+\newcommand{\veclamtil}{\mbox{\boldmath$\tilde\lambda$}}
+\newcommand{\vecmutil}{\mbox{\boldmath$\tilde\mu$}}
+\newcommand{\vecnutil}{\mbox{\boldmath$\tilde\nu$}}
+\newcommand{\vecxitil}{\mbox{\boldmath$\tilde\xi$}}
+\newcommand{\vecpitil}{\mbox{\boldmath$\tilde\pi$}}
+\newcommand{\vecvpitil}{\mbox{\boldmath$\tilde\varpi$}}
+\newcommand{\vecrhotil}{\mbox{\boldmath$\tilde\rho$}}
+\newcommand{\vecvrhotil}{\mbox{\boldmath$\tilde\varrho$}}
+\newcommand{\vecsigtil}{\mbox{\boldmath$\tilde\sigma$}}
+\newcommand{\vecvsigtil}{\mbox{\boldmath$\tilde\varsigma$}}
+\newcommand{\vectautil}{\mbox{\boldmath$\tilde\tau$}}
+\newcommand{\vecupsitil}{\mbox{\boldmath$\tilde\upsilon$}}
+\newcommand{\vecphitil}{\mbox{\boldmath$\tilde\phi$}}
+\newcommand{\vecvphitil}{\mbox{\boldmath$\tilde\varphi$}}
+\newcommand{\vecchitil}{\mbox{\boldmath$\tilde\chi$}}
+\newcommand{\vecpsitil}{\mbox{\boldmath$\tilde\psi$}}
+\newcommand{\vecometil}{\mbox{\boldmath$\tilde\omega$}}
+\newcommand{\vecGamtil}{\mbox{\boldmath$\tilde\Gamma$}}
+\newcommand{\vecDeltil}{\mbox{\boldmath$\tilde\Delta$}}
+\newcommand{\vecThetil}{\mbox{\boldmath$\tilde\Theta$}}
+\newcommand{\vecLamtil}{\mbox{\boldmath$\tilde\Lambda$}}
+\newcommand{\vecXitil}{\mbox{\boldmath$\tilde\Xi$}}
+\newcommand{\vecPitil}{\mbox{\boldmath$\tilde\Pi$}}
+\newcommand{\vecSigtil}{\mbox{\boldmath$\tilde\Sigma$}}
+\newcommand{\vecUpsitil}{\mbox{\boldmath$\tilde\Upsilon$}}
+\newcommand{\vecPhitil}{\mbox{\boldmath$\tilde\Phi$}}
+\newcommand{\vecPsitil}{\mbox{\boldmath$\tilde\Psi$}}
+\newcommand{\vecOmetil}{\mbox{\boldmath$\tilde\Omega$}}
